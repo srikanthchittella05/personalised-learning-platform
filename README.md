@@ -49,6 +49,22 @@ npm run dev
 ```
 The Next.js frontend will start at `http://localhost:3000`. Open this URL in your browser.
 
+### Option 3: Using Docker
+If you have Docker installed, you can spin up both the frontend and backend instantly.
+
+**Windows:**
+Double-click `docker-start.bat` or run:
+```bash
+.\docker-start.bat
+```
+
+**Mac/Linux:**
+```bash
+bash docker-start.sh
+```
+
+Both services will be containerized and bridged automatically. Frontend at `http://localhost:3000` and backend at `http://localhost:8000`.
+
 ---
 
 ## ☁️ Deployment Guide
