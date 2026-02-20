@@ -8,18 +8,21 @@ from sqlalchemy.orm import Session
 from database import get_db
 from config import get_settings
 import models
+import bcrypt
 
 settings = get_settings()
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 bearer_scheme = HTTPBearer()
 
-
 def hash_password(password: str) -> str:
-    return pwd_context.hash(password)
-
+    pwd_bytes = password.encode('utf-8')
+    salt = bcrypt.gensalt()
+    hashed_password = bcrypt.hashpw(password=pwd_bytes, salt=salt)
+    return hashed_password.decode('utf-8')
 
 def verify_password(plain: str, hashed: str) -> bool:
-    return pwd_context.verify(plain, hashed)
+    password_byte_enc = plain.encode('utf-8')
+    hashed_password_byte_enc = hashed.encode('utf-8')
+    return bcrypt.checkpw(password=password_byte_enc, hashed_password=hashed_password_byte_enc)
 
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -> str:

@@ -225,10 +225,10 @@ def seed_database():
             db.add(attempt)
 
         db.commit()
-        print("✅ Database seeded successfully")
+        print("Database seeded successfully")
     except Exception as e:
         db.rollback()
-        print(f"⚠️  Seed error (may already be seeded): {e}")
+        print(f"Seed error (may already be seeded): {e}")
     finally:
         db.close()
 
