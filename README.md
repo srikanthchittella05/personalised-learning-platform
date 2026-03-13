@@ -1,6 +1,6 @@
 # Personalised Learning Platform
 
-A full-stack adaptive learning platform that tracks student performance and provides AI-powered recommendations using Next.js, FastAPI, PostgreSQL (or SQLite locally), and Scikit-Learn.
+A full-stack adaptive learning platform that tracks student performance and provides AI-powered recommendations using Next.js, FastAPI, PostgreSQL (or SQLite locally), and Scikit-Learn.   https://learn-spark-ai-11.lovable.app
 
 ## 🏗️ Architecture
 
